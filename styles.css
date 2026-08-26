@@ -1,0 +1,73 @@
+@import url(./reset.css);
+
+:root {
+    --color--orangered: rgb(255, 69, 0);
+}
+
+html {
+    font-size: 16px;
+    overflow: scroll;
+    overflow-x: hidden;
+    background-color: black;
+}
+
+main {
+    background: black;
+    max-width: 1440px;
+    height: 100dvh;
+    margin-inline: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+}
+
+button {
+    font-family: 'Inter', sans-serif;
+    position: relative;
+    border: 0;
+    outline: none;
+    background: none;
+    color: rgb(40, 72, 94);
+    font-size: 7rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    cursor: pointer;
+    font-weight: 800;
+    margin-inline: auto;
+    /* padding-left: 6px;  отступ должен быть такой же как и ховер тексте (он не менее 6px) */
+}  
+
+ .hover-text {
+    position: absolute;
+    content: "";
+    width: 0;
+    padding-left: 6px;
+    color: var(--color--orangered);
+    inset: 0;
+    overflow: hidden;
+    border-right: 6px solid var(--color--orangered);
+    transition: width .4s ease;
+    animation: blink-border 1100ms infinite;
+}
+
+ button:hover .hover-text {
+    width: 100%;
+    filter: drop-shadow(0 0 40px var(--color--orangered));
+}
+
+
+@keyframes blink-border {
+    0% {
+        border-right-color: var(--color--orangered);
+    }
+
+    50% {
+        border-right-color: transparent;
+    }
+
+    100% {
+        border-right-color: var(--color--orangered);
+    }
+} 
+
